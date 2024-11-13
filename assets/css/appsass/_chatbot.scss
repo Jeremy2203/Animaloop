@@ -1,11 +1,20 @@
+#toggleChatbox {
+    position: fixed;
+    left: 0;
+    top: 70%;
+	writing-mode: vertical-rl;
+    text-orientation: upright;
+	z-index: 99999999;
+}
 #chatbox {
-	width: 100%;
-	max-width: 37.5rem;
-	background-color: #000000;
-	position: fixed;
-	bottom: 2rem;
-	right: 2rem;
-	border-radius: 1.25rem;
+	z-index: 99999999;
+    width: 100%;
+    max-width: 37.5rem;
+    background-color: #000000;
+    position: fixed;
+    bottom: 0;
+    right: 2rem;
+    border-radius: 1.25rem 1.25rem 0 0;
     * {
         font-size: 0.9rem !important;
     }
