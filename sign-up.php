@@ -63,6 +63,7 @@
         <!-- Contenido principal Fin -->
     </div>
 
+    <?php include 'php/cookies.php'; ?>
     <!-- Jquery JS -->
     <script src="assets/js/vendor/jquery-3.6.3.min.js"></script>
     <script src="assets/js/vendor/bootstrap.min.js"></script>

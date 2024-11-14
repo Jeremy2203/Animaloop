@@ -65,7 +65,7 @@
         <!-- Información de contacto -->
         <h1>Política de Privacidad</h1>
 
-        <p>En <strong>Anime loop</strong>, valoramos y respetamos su privacidad. A continuación, explicamos cómo recopilamos, utilizamos y protegemos la información personal que usted nos proporciona a través de este sitio web.</p>
+        <p>En <strong>AnimeLoop</strong>, valoramos y respetamos su privacidad. A continuación, explicamos cómo recopilamos, utilizamos y protegemos la información personal que usted nos proporciona a través de este sitio web.</p>
 
         <h2>1. Recopilación de Información</h2>
         <p>Recopilamos información personal de diferentes formas, incluyendo, pero no limitándose a, formularios de contacto, registros de usuarios y cookies.</p>
@@ -86,12 +86,12 @@
         <p>Nos reservamos el derecho de actualizar esta Política de Privacidad en cualquier momento. Le recomendamos revisar periódicamente esta página para estar informado sobre cualquier cambio.</p>
 
         <h2>7. Contacto</h2>
-        <p>Si tiene preguntas sobre nuestra Política de Privacidad, por favor contáctenos a través de <strong>opticafalconbusiness@gmail.com</strong> o por teléfono al <strong>999-999-999</strong>.</p>
+        <p>Si tiene preguntas sobre nuestra Política de Privacidad, por favor contáctenos a través de <strong>animaloop@gmail.com</strong>.</p>
     </div>
 </div>
     
     </div>
-
+    <?php include 'php/cookies.php'; ?>
     <!-- Jquery JS -->
     <script src="assets/js/vendor/jquery-3.6.3.min.js"></script>
     <script src="assets/js/vendor/bootstrap.min.js"></script>
