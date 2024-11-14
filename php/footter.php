@@ -17,3 +17,4 @@
         </footer>
     </div>
 </div>
+<?php include 'cookies.php'; ?>

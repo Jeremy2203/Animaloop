@@ -7,9 +7,9 @@ $animes = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 $stmt->close();
 ?>
 <div class="container">
-  <div id="toggleChatbox" class="btn btn-primary">AnimaBot</div>
+  <div id="toggleChatbox" class="btn btn-primary">💬</div>
   <div id="chatbox" style="display: none;">
-    <div id="nombre-chatbot">AnimaBot</div>
+    <div id="nombre-chatbot">🤖 AnimaBot</div>
     <div class="divisor"></div>
     <div id="messages"></div>
     <div class="divisor"></div>

@@ -26,9 +26,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <?php
 
-    require 'config/config.php';
-
     function verificar ($correo, $contra){
+        require 'config/config.php';
         $sql = "SELECT nombre, password FROM usuarios WHERE correo = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $correo);

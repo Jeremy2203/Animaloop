@@ -25,9 +25,8 @@
 
 <?php
 
-    require 'config/config.php';
-    
     function revisarcorreo($correo){
+        require 'config/config.php';
         $sql = "SELECT id FROM usuarios WHERE correo = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('s', $correo);
@@ -39,6 +38,7 @@
     }
 
     function registrar($nom, $cor, $con){
+        require 'config/config.php';
         $pass = password_hash($con, PASSWORD_DEFAULT);
         $sql = "INSERT INTO usuarios (nombre, correo, password) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($sql);
