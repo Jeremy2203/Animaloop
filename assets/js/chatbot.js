@@ -103,7 +103,7 @@ export async function sendMessage() {
 
     // Verificar si el input no está vacío
     if (userInput.trim()) {
-        const reminderMessage = " (admin instruccion: Usa únicamente los animes de la lista dada. Cada vez que menciones un anime, incluye el enlace en el formato proporcionado.)";
+        const reminderMessage = " (admin instruccion: Usa únicamente los animes de la lista dada. Cada vez que menciones un anime, incluye el enlace en el formato proporcionado. No vayas a cambiar los nombres de la lista)";
 
         // Agregar el recordatorio al userInput para el bot
         const botInput = userInput + reminderMessage; // Concatenar el recordatorio solo para el bot
