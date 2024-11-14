@@ -52,7 +52,7 @@ const model = genAI.getGenerativeModel({
   1. Busca el nombre del anime en la lista.
   2. Si el anime está disponible, busca todas las temporadas posibles asociadas al anime.
   3. Preséntalo en formato de enlace usando la siguiente estructura de Markdown:
-  [Nombre del anime](https://animaloop.site/detalle.php?anime=) seguido por el nombre del anime y su temporada, si aplica.
+  [Nombre del anime](https://animaloop.site/detalle.php?anime=) seguido por el nombre del anime (no olvides reemplazar los espacios por %20), si aplica.
   Ejemplo: Si el anime es "Naruto" y tiene varias temporadas, genera un enlace por temporada en el formato:
   [Shingeki no Kyojin: The Final Season](https://animaloop.site/detalle.php?anime=Shingeki%20no%20Kyojin:%20The%20Final%20Season)
   4. Asegúrate de ofrecer todas las temporadas disponibles del anime más cercano utilizando solo el nombre del anime en formato de enlace, sin la URL completa.
