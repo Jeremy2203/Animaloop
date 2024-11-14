@@ -5,7 +5,7 @@
                 <a href="/" class="mb-3 me-2 mb-md-0 logo">
                     AnimaL<i class="fa-solid fa-infinity"></i>p
                 </a>
-                <span class="mb-3 mb-md-0 text-white">© 2024 Company, Inc</span>
+                <span class="mb-3 mb-md-0 text-white">© 2022 Company, Inc</span>
             </div>
     
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

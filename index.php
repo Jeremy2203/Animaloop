@@ -242,6 +242,10 @@
         </div>
         <!--Área de inicio del pie de página-->
         <?php include "php/footter.php"; ?>
+       
+       <!-- @c-red  CHATBOT -->
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/chatbot.php"; ?>
+
 
     </div>
     <!--Jquery JS-->

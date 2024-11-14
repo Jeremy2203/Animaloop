@@ -21,6 +21,9 @@
     <!-- Inicio del área de encabezado -->
     <?php include 'php/navbar2.php'; ?>
 
+    <!-- @c-red  CHATBOT -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/chatbot.php"; ?>
+    
     <!-- Inicio del contenedor principal -->
     <div id="main-wrapper" class="main-wrapper overflow-hidden">
 
