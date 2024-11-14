@@ -1,4 +1,5 @@
 <?php require 'php/head.php'; ?>
+<?php require 'procesar.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -29,8 +30,12 @@
                 <div class="container-fluid">
                     <div class="signup-block">
                         <h1 class="text-white mb-32">Registrate</h1>
-                        <form action="procesar.php" method="post">
-                        <div class="mb-32">
+                        <form action="sign-up.php" method="post">
+                        <?php if (!empty($error_mensaje)): ?>
+                            <p id="alerta-mensaje" class="error_msj" style="display: block;"><?php echo $error_mensaje; ?></p>
+                        <?php endif; ?>
+                            <br>
+                            <div class="mb-32">
                                 <input class="form-control mb-32" name="nombre" placeholder="Ingresa tu nombre" type="text" />
                             </div>
                             <div class="mb-32">
@@ -68,6 +73,17 @@
 
     <!-- Guiones del sitio -->
     <script src="assets/js/app.js"></script>
+    <script>
+        const alertamensaje = document.getElementById('alerta-mensaje');
+        if (alertamensaje) {
+            setTimeout(() => {
+                alertamensaje.classList.add('fade-out');
+                setTimeout(() => {
+                    alertamensaje.style.display = 'none';
+                }, 2000);
+            }, 3000);
+        }
+    </script>
 </body>
 
 

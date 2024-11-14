@@ -1,6 +1,7 @@
  <?php 
 $css = '
 <link rel="stylesheet" href="/assets/css/bs5.css">
+<link rel="stylesheet" href="/assets/css/stilo.css">
 <link rel="stylesheet" href="/assets/css/app.css">
 ';
 $css2 = '

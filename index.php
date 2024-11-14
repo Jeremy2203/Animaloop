@@ -1,4 +1,7 @@
-<?php require 'php/head.php'; ?>
+<?php 
+    session_start();
+    require 'php/head.php'; 
+    ?>
 <!DOCTYPE html>
 <html lang="es">
 

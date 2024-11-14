@@ -96,12 +96,18 @@
             <ul class="navbar-nav">
                 <li class="nav-item my-3 my-lg-3 mx-4 dropdown has-children">
                     <a class="nav-link dropdown-toggle" href="#" role="button">
+                        <?php if (isset($_SESSION['usuario'])): ?>
+                            <span><?php echo $_SESSION['usuario']; ?></span>
+                        <?php endif; ?>    
                         <img src="assets/media/author/profile.png" alt="">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end bg-light-black">
-                        <li><a class="dropdown-item" ></a></li>
+                    <?php if (isset($_SESSION['usuario'])): ?>
+                        <li><a class="dropdown-item" href="/logout.php">cerrar sesion</a></li>
+                    <?php else: ?>
                         <li><a class="dropdown-item" href="/sign-up.php">Registrate</a></li>
                         <li><a class="dropdown-item" href="/login.php">Inicia Sesion</a></li>
+                    <?php endif; ?>    
                     </ul>
                 </li>
             </ul>

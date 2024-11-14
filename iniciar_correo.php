@@ -8,14 +8,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         header("Location: login.php");
         exit();
     }
-
-    if(verificar($correo, $contra)){
+    $usuario = verificar($correo, $contra);
+    if($usuario){
         session_start();
-        $_SESSION['usuario'] = $correo;
+        $_SESSION['usuario'] = $usuario;
         header("Location: index.php");
         exit();
     }else{
-        header("Location: login.php");
+        header("Location: login.php?error=1");
         exit();
     }
     
@@ -25,17 +25,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
 
 <?php
+
+    require 'config/config.php';
+
     function verificar ($correo, $contra){
-        require 'config/config.php';
-        $sql = "SELECT password FROM usuarios WHERE correo = ?";
+        $sql = "SELECT nombre, password FROM usuarios WHERE correo = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $correo);
         $stmt->execute();
         $stmt->store_result();
         if($stmt->num_rows == 1){
-            $stmt->bind_result($password);
+            $stmt->bind_result($nombre, $password);
             $stmt->fetch();
-            return password_verify($contra, $password);
+            $stmt->close();
+            if( password_verify($contra, $password)){
+                return $nombre;
+            }
         }else{
             return false;
         }
