@@ -66,6 +66,10 @@ if (!empty($nombre_anime) && !empty($n_episodio)) {
     <!--Área de encabezado Inicio-->
     <?php include 'php/navbar2.php'; ?>
     <!--Fin del área de encabezado-->
+
+    <!-- @c-red  CHATBOT -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/chatbot.php"; ?>
+
     <div class="overflow-hidden">
         <section class="anime-video">
             <div class="container">
