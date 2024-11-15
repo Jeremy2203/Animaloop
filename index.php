@@ -1,7 +1,7 @@
-<?php 
-    session_start();
-    require 'php/head.php'; 
-    ?>
+<?php
+session_start();
+require 'php/head.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -245,22 +245,25 @@
         </div>
         <!--Área de inicio del pie de página-->
         <?php include "php/footter.php"; ?>
-       
-       <!-- @c-red  CHATBOT -->
+
+        <!-- @c-red  CHATBOT -->
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/chatbot.php"; ?>
 
 
     </div>
     <!--Jquery JS-->
-    <script src="assets/js/vendor/jquery-3.6.3.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/jquery.countdown.min.js"></script>
-    <script src="assets/js/vendor/slick.min.js"></script>
-    <script src="assets/js/vendor/jquery-appear.js"></script>
-    <script src="assets/js/vendor/jquery-validator.js"></script>
-    <script src="assets/js/vendor/aksVideoPlayer.js"></script>
-    <!--Guiones del sitio-->
-    <script src="assets/js/app.js"></script>
+    <?php
+    $version = time();
+    ?>
+    <script src="assets/js/vendor/jquery-3.6.3.min.js?v=<?php echo $version; ?>"></script>
+    <script src="assets/js/vendor/bootstrap.min.js?v=<?php echo $version; ?>"></script>
+    <script src="assets/js/vendor/jquery.countdown.min.js?v=<?php echo $version; ?>"></script>
+    <script src="assets/js/vendor/slick.min.js?v=<?php echo $version; ?>"></script>
+    <script src="assets/js/vendor/jquery-appear.js?v=<?php echo $version; ?>"></script>
+    <script src="assets/js/vendor/jquery-validator.js?v=<?php echo $version; ?>"></script>
+    <script src="assets/js/vendor/aksVideoPlayer.js?v=<?php echo $version; ?>"></script>
+    <script src="assets/js/app.js?v=<?php echo $version; ?>"></script>
+
     <script>
         var swiper1 = new Swiper(".SwiperBanner", {
             autoplay: {
