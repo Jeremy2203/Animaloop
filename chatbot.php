@@ -46,7 +46,6 @@ $stmt->close();
       chatbox.style.display = 'none';
     }
   });
-
   const toggleButton = document.getElementById('toggleChatbox');
   if (toggleButton) {
     toggleButton.addEventListener('click', () => {
@@ -54,8 +53,9 @@ $stmt->close();
     });
   }
 
-  const animeNames = animeList.map(anime => anime.nombre);
 
+
+  const animeNames = animeList.map(anime => anime.nombre);
   const API_KEY = "AIzaSyABwOP1s0a3NItdiadPxROYZJhC1gU2nXo";
 
   const genAI = new GoogleGenerativeAI(API_KEY);
@@ -102,7 +102,7 @@ $stmt->close();
     temperature: 1,
     topP: 0.95,
     topK: 64,
-    maxOutputTokens: 8192,
+    maxOutputTokens: 80192,
     responseMimeType: "text/plain",
   };
 
@@ -161,12 +161,13 @@ $stmt->close();
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
 
+
+
   document.getElementById('user-input').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
       sendMessage();
     }
   });
-
   const md = window.markdownit({
     linkify: true
   });
