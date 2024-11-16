@@ -6,13 +6,8 @@
     <title>Simulación de Pago - Plataforma de Streaming</title>
     <style>
         body { font-family: Arial, sans-serif; }
-        .container { width: 60%; margin: 0 auto; padding: 20px; background-color: #f4f4f4; border-radius: 10px; }
-        h2 { text-align: center; color: #2a2741; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; color: #242222; }
-        .form-group input, .form-group select { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; }
-        .form-group button { width: 100%; padding: 10px; background-color: #bcc6be; color: rgb(25, 25, 26); border: none; border-radius: 5px; cursor: pointer; }
-        .form-group button:hover { background-color: #757273; }
+        .container { width: 80%; margin: 0 auto; padding: 20px; /* background-color: #f4f4f4; */ border-radius: 10px; }
+        h2 { text-align: center; color: #ffffff; }
         .result { text-align: center; margin-top: 20px; font-weight: bold; }
     </style>
 </head>
@@ -20,10 +15,10 @@
 
 <div class="container">
     <h2>Suscripción -  Plataforma de Streaming AnimaLoop</h2>
-
+    <br>
     <div class="form-group">
         <label for="plan">Selecciona tu plan de suscripción</label>
-        <select id="plan" onchange="actualizarTotal()">
+        <select id="plan" class="form-control" onchange="actualizarTotal()">
             <option value="5.99" data-name="Básico">Plan Básico - S/5.99/mes</option>
             <option value="9.99" data-name="Estándar">Plan Estándar - S/9.99/mes</option>
             <option value="14.99" data-name="Premium">Plan Premium - S/14.99/mes</option>
@@ -32,26 +27,26 @@
 
     <div class="form-group">
         <label for="nombre">Nombre del Titular</label>
-        <input type="text" id="nombre" placeholder="Ingresa tu nombre completo">
+        <input type="text" id="nombre" class="form-control" placeholder="Ingresa tu nombre completo">
     </div>
 
     <div class="form-group">
         <label for="tarjeta">Número de Tarjeta</label>
-        <input type="text" id="tarjeta" placeholder="1111-2222-3333-4444" maxlength="19">
+        <input type="text" id="tarjeta" class="form-control" placeholder="1111-2222-3333-4444" maxlength="19">
     </div>
 
     <div class="form-group">
         <label for="fechaExp">Fecha de Expiración (MM/AA)</label>
-        <input type="text" id="fechaExp" placeholder="MM/AA" maxlength="5">
+        <input type="text" id="fechaExp" class="form-control" placeholder="MM/AA" maxlength="5">
     </div>
 
     <div class="form-group">
         <label for="cvv">CVV</label>
-        <input type="text" id="cvv" placeholder="123" maxlength="3">
+        <input type="text" id="cvv" class="form-control" placeholder="123" maxlength="3">
     </div>
-
-    <div class="form-group">
-        <button onclick="simularPago()">Pagar $<span id="total">5.99</span></button>
+    <br>
+    <div class="form-group" style="display: flex; justify-content: center;">
+        <button class="cus-btn primary" onclick="simularPago()">Pagar $<span id="total">5.99</span></button>
     </div>
 
     <div id="resultado" class="result"></div>

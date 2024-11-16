@@ -7,7 +7,7 @@ $animes = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 $stmt->close();
 ?>
 <div class="container">
-  <div id="toggleChatbox" class="btn btn-primary">💬</div>
+<div id="toggleChatbox" class="btn btn-primary" style="font-size: 32px;"><i id="botoncito" class="fa-solid fa-message-bot"></i></div>
   <div id="chatbox" style="display: none;">
     <div id="nombre-chatbot">🤖 AnimaBot</div>
     <div class="divisor"></div>

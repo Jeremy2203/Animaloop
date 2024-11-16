@@ -82,7 +82,7 @@
                     </a>
                     <ul class="dropdown-menu bg-light-black">
                         <li><a class="dropdown-item" href="/404.php">404</a></li>
-                        <li><a class="dropdown-item" href="/PagoSimulacion/simulacion.php">Suscripción</a></li>
+                        <li><a class="dropdown-item" href="/suscripcion.php">Suscripción</a></li>
                         <li><a class="dropdown-item" href="/coming-soon.php">Proximamente</a></li>
                         <li><a class="dropdown-item" href="/sign-up.php">Registrate</a></li>
                         <li><a class="dropdown-item" href="/login.php">Inicia Sesion</a></li>
