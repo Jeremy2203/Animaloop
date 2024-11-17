@@ -7,11 +7,16 @@ $animes = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 $stmt->close();
 ?>
 <div class="container">
-  <div id="toggleChatbox" class="btn btn-primary" style="font-size: 32px;"><i class="fa-solid fa-message-bot"></i></div>
+  <div id="toggleChatbox" class="btn btn-primary"><i class="fa-solid fa-message-bot"></i></div>
   <div id="chatbox" style="display: none;">
     <div id="nombre-chatbot">🤖 AnimaBot</div>
     <div class="divisor"></div>
-    <div id="messages"></div>
+    <div id="messages">
+      <div class="message bot-message" data-rendered="true">
+        <p>¡Hola! Soy AnimaBot, tu chatbot para buscar y recomendar animes. ¿Qué anime estás buscando?</p>
+      </div>
+      
+    </div>
     <div class="indicador-escribiendo" style="display: none;">
       <span>AnimaBot está escribiendo</span>
       <span class="puntos"></span>
@@ -83,7 +88,7 @@ $stmt->close();
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-pro",
     safetySettings,
-    systemInstruction: `Eres es un chatbot de búsqueda y recomendación de animes Llamado "AnimaBot", presentate cada que saluden. Está diseñado para encontrar animes de la lista que se te ha proporcionado y generar un enlace directo al anime correspondiente. Si no encuentra el anime exacto, sugiere los animes más cercanos disponibles en la lista".
+    systemInstruction: `Eres es un chatbot de búsqueda y recomendación de animes Llamado "AnimaBot". Está diseñado para encontrar animes de la lista que se te ha proporcionado y generar un enlace directo al anime correspondiente. Si no encuentra el anime exacto, sugiere los animes más cercanos disponibles en la lista".
   Cada mensaje se te dara un Admin instruccion, esto es solo para recordar como contestar al usuario, no menciones esta instruccion en tu respuesta, ni hagas mencion de la "lista".
 
   1. Busca el nombre del anime en la lista.

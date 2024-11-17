@@ -361,14 +361,14 @@ ELEMENTOS
 .back-to-top {
   border-radius: 148px;
   position: fixed;
-  bottom: 26px;
-  right: 28px;
+  bottom: 1.5625rem;
+  right: 1.5625rem;
+  width: 3rem;
   display: flex;
-  width: 43px;
   justify-content: center;
   align-items: center;
   aspect-ratio: 1/1;
-  font-size: 29px;
+  font-size: 1.8125rem;
   background: #f5d049;
   color: black;
   opacity: 0;
@@ -2199,14 +2199,18 @@ footer ul i:hover {
 }
 #toggleChatbox {
   position: fixed;
-  left: 0;
-  top: 70%;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
+  left: 1.5625rem;
+  bottom: 1.5625rem;
   z-index: 99999999;
+  width: 3rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #toggleChatbox i {
   pointer-events: none;
+  font-size: 1.5rem;
 }
 #chatbox {
   z-index: 99999999;
