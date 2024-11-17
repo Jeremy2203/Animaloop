@@ -102,7 +102,7 @@ function simularPago() {
         const pagoExitoso = Math.random() > 0.1; // 90% de probabilidad de éxito
 
         if (pagoExitoso) {
-            document.getElementById("resultado").innerText = `¡Pago exitoso! Has adquirido el plan ${nombrePlan} por s/s/{precio}/mes. ¡Gracias, disfruta de tu suscripción!`;
+            document.getElementById("resultado").innerText = `¡Pago exitoso! Has adquirido el plan ${nombrePlan}. ¡Gracias, disfruta de tu suscripción!`;
         } else {
             document.getElementById("resultado").innerText = "Hubo un error en el procesamiento del pago. Inténtalo de nuevo.";
         }
