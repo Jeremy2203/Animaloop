@@ -1,4 +1,5 @@
 <?php require 'php/head.php'; ?>
+<?php require 'iniciar_correo.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -31,18 +32,16 @@
                             <a class="facebook hide-link mb-24" href="#"><img alt="" src="assets/media/icons/facebook-2.php" />Continuar con Facebook</a> -->
                             <button class="mail hide-link mb-32" id="continue-email"><img alt="" src="assets/media/icons/mail.php" />Continuar con correo</button>
                             <div class="login-sec hide-form" style="display: none;">
-                                <form action="iniciar_correo.php" method="post">
+                                <form action="login.php" method="post">
+                                    <?php if (!empty($error_mensaje)): ?>
+                                        <p id="alerta-mensaje" class="error_msj" style="display: block;"><?php echo $error_mensaje; ?></p>
+                                    <?php endif; ?>
+                                    <br>
                                     <div class="mb-32">
-                                        <input class="form-control mb-32 <?php if (isset($_GET['error'])) echo 'input-error'; ?>"
-                                            name="email"
-                                            placeholder="<?php echo isset($_GET['error']) ? 'Correo incorrecto' : 'Tu correo electrónico'; ?>"
-                                            type="email" />
+                                        <input class="form-control mb-32" name="email" placeholder="Ingresa tu correo electrónico" type="email" />
                                     </div>
                                     <div class="mb-32">
-                                        <input class="form-control mb-32 <?php if (isset($_GET['error'])) echo 'input-error'; ?>"
-                                            name="password"
-                                            placeholder="<?php echo isset($_GET['error']) ? 'Contraseña incorrecta' : 'Introducir contraseña'; ?>"
-                                            type="password" />
+                                        <input class="form-control mb-32" name="password" placeholder="Introducir contraseña" type="password" />
                                     </div>
                                     <div class="text-center mb-32">
                                         <button class="cus-btn primary mb-32">Acceso</button>
@@ -74,11 +73,20 @@
     <!-- Guiones del sitio -->
     <script src="assets/js/app.js"></script>
     <script>
+        const alertamensaje = document.getElementById('alerta-mensaje');
+        if (alertamensaje) {
+            setTimeout(() => {
+                alertamensaje.classList.add('fade-out');
+                setTimeout(() => {
+                    alertamensaje.style.display = 'none';
+                }, 2000);
+            }, 3000);
+        }
+    </script>
+    <script>
         document.getElementById('continue-email').addEventListener('click', function() {
             // Muestra el formulario de inicio de sesión y oculta el botón "Continuar con correo"
             document.querySelector('.login-sec').style.display = 'block';
-            document.querySelector('.google').style.display = 'none';
-            document.querySelector('.facebook').style.display = 'none';
             document.getElementById('continue-email').style.display = 'none';
         });
 
@@ -89,17 +97,19 @@
         });
     </script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Comprueba si el parámetro "error" está presente en la URL
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.has('error')) {
-                // Muestra el formulario y oculta el botón de correo
-                document.querySelector('.login-sec').style.display = 'block';
-                document.getElementById('continue-email').style.display = 'none';
-            }
-        });
-    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Mensaje de error inyectado desde PHP
+        const errorMensaje = "<?php echo isset($error_mensaje) ? addslashes($error_mensaje) : ''; ?>";
+        
+        if (errorMensaje) {
+            // Muestra el formulario y oculta el botón de correo
+            document.querySelector('.login-sec').style.display = 'block';
+            document.getElementById('continue-email').style.display = 'none';
+        }
+    });
+</script>
+
 
 
 </body>

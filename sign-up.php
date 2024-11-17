@@ -29,6 +29,7 @@
             <section class="signup text-center">
                 <div class="container-fluid">
                     <div class="signup-block">
+                        <br>
                         <h1 class="text-white mb-32">Registrate</h1>
                         <form action="sign-up.php" method="post">
                         <?php if (!empty($error_mensaje)): ?>
