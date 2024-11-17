@@ -1,7 +1,3 @@
 /node_modules
 /dist/assets/css
 /.favorites.json
-package-lock.json
-package.json
-assets/css/sass
-assets/css/appsass
