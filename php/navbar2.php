@@ -43,6 +43,36 @@
                             isolation: isolate;
                             stroke: #bebebe;
                         }
+
+                        .pf-container {
+                            position: relative;
+                            display: inline-block;
+                        }
+
+                        .pf-avatar img {
+                            width:100px;
+                            /* Tamaño del avatar */
+                            height: 50px;
+                            border-radius: 50%;
+                            /* Hace el avatar circular */
+                            background-color: #d9d9d9;
+                            /* Color de fondo del avatar */
+                        }
+
+                        .pf-tag {
+                            position: absolute;
+                            bottom: 10px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            background-color: #f5d049;
+                            /* Color de fondo de la etiqueta */
+                            color: black;
+                            padding: 0px 10px;
+                            border-radius: 10px;
+                            font-size: 11px;
+                            font-weight: bold;
+                            white-space: nowrap;
+                        }
                     </style>
                 </defs>
                 <title>Recurso 4</title>
@@ -96,22 +126,34 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item my-3 my-lg-3 mx-4 dropdown has-children">
-                    <a class="nav-link dropdown-toggle" href="#" role="button">
+                    <a class="nav-link dropdown-toggle pf-container" href="#" role="button">
                         <?php if (isset($_SESSION['usuario'])): ?>
-                            <span><?php echo $_SESSION['usuario']; ?></span>
-                        <?php endif; ?>    
-                        <img src="assets/media/author/profile.png" alt="">
+                            <div class="pf-avatar">
+                                <img src="assets/media/author/profile.png" alt="Avatar">
+                            </div>
+                            <div class="pf-tag">
+                                <span><?php echo $_SESSION['usuario']; ?></span>
+                            </div>
+                        <?php else: ?>
+                            <div class="pf-avatar">
+                                <img src="assets/media/author/profile.png" alt="Avatar">
+                            </div>
+                            <div class="pf-tag">
+                                Invitado
+                            </div>
+                        <?php endif; ?>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end bg-light-black">
-                    <?php if (isset($_SESSION['usuario'])): ?>
-                        <li><a class="dropdown-item" href="/logout.php">cerrar sesion</a></li>
-                    <?php else: ?>
-                        <li><a class="dropdown-item" href="/sign-up.php">Registrate</a></li>
-                        <li><a class="dropdown-item" href="/login.php">Inicia Sesion</a></li>
-                    <?php endif; ?>    
+                        <?php if (isset($_SESSION['usuario'])): ?>
+                            <li><a class="dropdown-item" href="/logout.php">Cerrar sesión</a></li>
+                        <?php else: ?>
+                            <li><a class="dropdown-item" href="/sign-up.php">Regístrate</a></li>
+                            <li><a class="dropdown-item" href="/login.php">Inicia sesión</a></li>
+                        <?php endif; ?>
                     </ul>
                 </li>
             </ul>
+
 
         </div>
     </div>
