@@ -1,10 +1,11 @@
 const chatbox = document.getElementById('chatbox');
 document.addEventListener('click', (event) => {
-    if (chatbox && !chatbox.contains(event.target) && event.target.id !== 'botoncito') {
+    if (chatbox && !chatbox.contains(event.target) && event.target.id !== 'toggleChatbox') {
+        
         chatbox.style.display = 'none';
     }
 });
-const toggleButton = document.getElementById('botoncito');
+const toggleButton = document.getElementById('toggleChatbox');
 if (toggleButton) {
     toggleButton.addEventListener('click', () => {
         chatbox.style.display = (chatbox.style.display === 'none' || chatbox.style.display === '') ? 'block' : 'none';

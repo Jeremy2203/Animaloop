@@ -2178,6 +2178,25 @@ footer ul i:hover {
 }
 
 /* @c-red CHATBOT */
+.indicador-escribiendo {
+  margin: .3125rem;
+  color: #dbdbdb;
+  font-style: italic;
+  padding-left: 1.5rem;
+}
+
+.indicador-escribiendo .puntos::after {
+  content: '';
+  animation: escribiendo 1.5s infinite;
+}
+
+@keyframes escribiendo {
+  0% { content: ''; }
+  25% { content: '.'; }
+  50% { content: '..'; }
+  75% { content: '...'; }
+  100% { content: ''; }
+}
 #toggleChatbox {
   position: fixed;
   left: 0;
@@ -2186,7 +2205,9 @@ footer ul i:hover {
   text-orientation: upright;
   z-index: 99999999;
 }
-
+#toggleChatbox i {
+  pointer-events: none;
+}
 #chatbox {
   z-index: 99999999;
   width: 100%;
