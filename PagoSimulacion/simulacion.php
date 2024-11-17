@@ -32,7 +32,7 @@
 
     <div class="form-group">
         <label for="tarjeta">Número de Tarjeta</label>
-        <input type="text" id="tarjeta" class="form-control" placeholder="1111-2222-3333-4444" maxlength="19">
+        <input type="text" id="tarjeta" class="form-control" placeholder="1111 2222 3333 4444" maxlength="19">
     </div>
 
     <div class="form-group">
@@ -51,6 +51,43 @@
 
     <div id="resultado" class="result"></div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Script para el número de tarjeta
+        const tarjetaInput = document.getElementById("tarjeta");
+        tarjetaInput.addEventListener("input", function () {
+            let inputValue = tarjetaInput.value;
+
+            // Eliminar cualquier carácter que no sea numérico
+            inputValue = inputValue.replace(/\D/g, '');
+
+            // Agrupar los dígitos en bloques de 4 separados por guiones
+            inputValue = inputValue.replace(/(\d{4})(?=\d)/g, '$1-');
+
+            // Limitar la longitud a 19 caracteres (16 números + 3 guiones)
+            tarjetaInput.value = inputValue.slice(0, 19);
+        });
+
+        // Script para la fecha de expiración
+        const fechaExpInput = document.getElementById("fechaExp");
+        fechaExpInput.addEventListener("input", function () {
+            let inputValue = fechaExpInput.value;
+
+            // Eliminar cualquier carácter no numérico
+            inputValue = inputValue.replace(/\D/g, '');
+
+            // Insertar "/" después de los dos primeros caracteres
+            if (inputValue.length > 2) {
+                inputValue = inputValue.slice(0, 2) + '/' + inputValue.slice(2, 4);
+            }
+
+            // Limitar el valor a 5 caracteres (MM/AA)
+            fechaExpInput.value = inputValue.slice(0, 5);
+        });
+    });
+</script>
+
 
 <script>
 // Actualizar total de acuerdo al plan seleccionado
